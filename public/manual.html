@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>诗匣 · 使用手册</title>
+<style>
+  body {
+    font-family: "Microsoft YaHei", sans-serif; color: #2c2620;
+    background: #eae4d6; margin: 0; padding: 30px 16px 80px;
+  }
+  .page { max-width: 860px; margin: 0 auto; }
+  .cover {
+    background: #fdfaf3; border: 1px solid #e7dfcc; border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(60,45,30,.08), 0 10px 34px rgba(60,45,30,.10);
+    padding: 54px 60px 44px; text-align: center; margin-bottom: 34px;
+  }
+  .seal {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 52px; height: 52px; border-radius: 8px; background: #9e3b34; color: #fbf6ec;
+    font-family: KaiTi, serif; font-size: 34px;
+    box-shadow: inset 0 0 0 2px rgba(251,246,236,.35), 0 2px 8px rgba(126,45,39,.35);
+  }
+  h1.title { font-family: KaiTi, serif; font-size: 42px; letter-spacing: 12px; margin: 18px 0 6px; }
+  .cover .sub { font-size: 14px; color: #a2967f; letter-spacing: 4px; }
+  .cover .intro {
+    margin-top: 26px; text-align: left; font-size: 15px; line-height: 2.1; color: #2c2620;
+    border-top: 1px solid #ddd3bd; padding-top: 22px;
+  }
+  .card {
+    background: #fdfaf3; border: 1px solid #e7dfcc; border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(60,45,30,.08);
+    padding: 30px 42px 34px; margin-bottom: 26px;
+  }
+  h2 {
+    font-family: SimSun, serif; font-size: 22px; letter-spacing: 3px;
+    border-bottom: 1px solid #ddd3bd; padding-bottom: 10px; margin-bottom: 18px;
+  }
+  h2 .no {
+    display: inline-block; background: #9e3b34; color: #fbf6ec; font-size: 14px;
+    border-radius: 4px; padding: 2px 10px; margin-right: 12px; letter-spacing: 1px; vertical-align: 4px;
+  }
+  h3 { font-family: SimSun, serif; font-size: 17px; letter-spacing: 1px; margin: 24px 0 10px; color: #7e2d27; }
+  p, li { font-size: 14.5px; line-height: 2.05; }
+  ul, ol { padding-left: 24px; }
+  li { margin-bottom: 6px; }
+  b.key { color: #7e2d27; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; }
+  th, td { border: 1px solid #ddd3bd; padding: 8px 12px; font-size: 13.5px; line-height: 1.8; text-align: left; vertical-align: top; }
+  th { background: #f4eee0; font-family: SimSun, serif; letter-spacing: 1px; white-space: nowrap; }
+  code {
+    font-family: Consolas, monospace; font-size: 13px;
+    background: #f4f1ea; border: 1px solid #ddd3bd; border-radius: 3px; padding: 1px 7px;
+  }
+  .tip {
+    background: #fbf3e4; border-left: 3px solid #b07d2b; border-radius: 0 4px 4px 0;
+    padding: 10px 16px; font-size: 13.5px; line-height: 1.9; margin: 14px 0;
+  }
+  .good {
+    background: #eef2e4; border-left: 3px solid #4a6b3a; border-radius: 0 4px 4px 0;
+    padding: 10px 16px; font-size: 13.5px; line-height: 1.9; margin: 14px 0;
+  }
+  .warn {
+    background: #fdf0ee; border-left: 3px solid #9e3b34; border-radius: 0 4px 4px 0;
+    padding: 10px 16px; font-size: 13.5px; line-height: 1.9; margin: 14px 0;
+  }
+  .step { display: flex; gap: 12px; margin: 10px 0; }
+  .step .n {
+    flex: none; width: 26px; height: 26px; border-radius: 50%; background: #9e3b34; color: #fbf6ec;
+    font-size: 14px; display: flex; align-items: center; justify-content: center; margin-top: 5px;
+  }
+  .step .t { flex: 1; }
+  .kbd {
+    font-family: Consolas, monospace; font-size: 12.5px; border: 1px solid #c9bd9f;
+    border-bottom-width: 2px; border-radius: 4px; padding: 1px 7px; background: #fffdf8;
+  }
+  .footer { text-align: center; color: #a2967f; font-size: 13px; letter-spacing: 2px; font-family: KaiTi, serif; }
+  @media print { body { background: #fff; padding: 0; } .card, .cover { box-shadow: none; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <span class="seal">诗</span>
+    <h1 class="title">诗匣 · 使用手册</h1>
+    <div class="sub">甲编 新诗 · 乙编 古体 — 私藏手稿的写作台</div>
+    <div class="intro">
+      诗匣是一个装在自己电脑里的诗歌写作台：所有诗稿收在一处，点目录即达；在网页里直接写、直接改，
+      改稿可以保留旧版本、随时对照与反悔；写古体诗和词时，右侧格律面板随写随检——逐字平仄、韵脚韵部、
+      粘对孤平，一目了然；写完还可以请 AI 按严苛的标准评审打分。
+      全部数据只存在自己的电脑里，一台笔记本、一杯茶，就是一间书斋。
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="no">壹</span>启动与停止</h2>
+    <div class="step"><span class="n">1</span><span class="t">双击文件夹里的 <code>启动诗匣.bat</code>，会弹出一个黑色小窗口——那是诗匣的引擎，<b class="key">不要关它</b>，关了诗匣就停了（最小化即可）。</span></div>
+    <div class="step"><span class="n">2</span><span class="t">浏览器会自动打开诗匣页面。如果没有自动打开，手动打开浏览器，在地址栏输入 <code>localhost:8137</code> 回车即可。</span></div>
+    <div class="step"><span class="n">3</span><span class="t">写完诗，直接关闭黑色窗口，诗匣就停止了。诗稿已经随时保存在硬盘上，不存在"退出丢失"的问题。</span></div>
+    <div class="tip">首次运行时，Windows 或杀毒软件可能提示"未知程序"，选择<b>「允许 / 仍要运行」</b>即可——包里带的是 Node.js 官方运行时，不是病毒。这份提示每个电脑只出现一次。</div>
+    <div class="tip">同一台电脑同时只能开一个诗匣。如果重复双击启动，它会检测到已经在运行，直接帮你打开页面。</div>
+  </div>
+
+  <div class="card">
+    <h2><span class="no">贰</span>两卷制：你的诗住在哪里</h2>
+    <p>页面左上角有两枚<b class="key">卷签</b>，一点即换，诗匣会记住你上次待的那一卷：</p>
+    <table>
+      <tr><th style="width:120px;">卷</th><th>收什么</th><th>特别的能力</th></tr>
+      <tr><td><b>甲编 · 新诗</b></td><td>现代诗</td><td>稿纸式编辑器、版本管理、AI 评价（100 分制）</td></tr>
+      <tr><td><b>乙编 · 古体</b></td><td>绝句、律诗、排律、古风·乐府、诗经体、词</td><td>甲编的全部能力 ＋ 实时格律面板、四套韵书、817 调词谱对照</td></tr>
+    </table>
+    <p>两卷完全分开存放、互不干扰，但共用同一套 AI 模型配置。页面上所有的删除操作都有二次确认弹窗，可以放心点。</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="no">叁</span>写一首新诗</h2>
+    <div class="step"><span class="n">1</span><span class="t">点右上角<b class="key">「＋ 写新诗」</b>（乙编叫「＋ 写新篇」），进入一张竖排稿纸。</span></div>
+    <div class="step"><span class="n">2</span><span class="t">顶部居中写<b>诗题</b>和<b>日期</b>；正文一行一句，<b class="key">空一行就是分节</b>。工具栏可以切换整篇左对齐或居中。</span></div>
+    <div class="step"><span class="n">3</span><span class="t">写完点<b class="key">「保存」</b>。若校验提示诗题为空或内容为空，补上即可。</span></div>
+    <p>写作时有两重保险：</p>
+    <ul>
+      <li><b>草稿自动暂存</b>：打字过程中每零点几秒自动保存一次草稿，手滑关了页面、甚至关了电脑，下次进入编辑器会自动恢复，并提示你恢复的时间。</li>
+      <li><b>撤销与重做</b>：随时按 <span class="kbd">Ctrl+Z</span> 撤销、<span class="kbd">Ctrl+Y</span> 重做，工具栏也有按钮。</li>
+    </ul>
+    <div class="tip">编辑器里如果出现「放弃改动，还原为已保存版本」的小字按钮，点它就能一键回到上次保存的样子——拿不准的改动随时可以反悔。</div>
+  </div>
+
+  <div class="card">
+    <h2><span class="no">肆</span>改诗与版本</h2>
+    <p>在目录点诗题进入诗的页面，点<b class="key">「编辑」</b>，还是在那张纸上改。点「保存」时会弹出一个选择：</p>
+    <table>
+      <tr><th>选项</th><th>效果</th><th>适合</th></tr>
+      <tr><td><b>覆盖保存，并把当前版本存入历史</b>（默认）</td><td>新内容生效，旧内容存进「版本」区</td><td>拿不准的改动、大改、想留改动轨迹 —— <b>推荐</b></td></tr>
+      <tr><td><b>直接覆盖，不留旧版</b></td><td>旧内容被替换，不留痕迹</td><td>只是改个错字</td></tr>
+    </table>
+    <p>留版时可以写一句<b>备注</b>（比如"第二节重写了"），方便以后认出来。保存前的旧版本都收录在诗页面下方的<b class="key">「保留的旧版本」</b>区，每个版本可以：</p>
+    <ul>
+      <li><b>查看全文</b>——弹窗展示那一版的完整内容；</li>
+      <li><b>与当前版对比</b>——左右两栏逐行对照，改动过的行会着色标出；</li>
+      <li><b>设为当前</b>——反悔了，把旧版恢复为正文（被替换下来的当前版会自动存入历史，不会丢）；</li>
+      <li><b>删除</b>——弹出确认框后才真删，防手滑。</li>
+    </ul>
+    <div class="warn">「删除此诗」会把诗连同所有旧版本、所有 AI 评价一起删除，弹出确认后不可恢复。重要的诗请勤备份（见柒）。</div>
+  </div>
+
+  <div class="card">
+    <h2><span class="no">伍</span>乙编的格律面板：随写随检的格式老师</h2>
+    <p>乙编辑器右侧有一块<b class="key">格律面板</b>（写诗时它一直在，窄窗口时会移到稿纸下方）。每次落笔约半秒后自动重新检视：</p>
+    <h3>它标注什么</h3>
+    <ul>
+      <li>每个字下面有<b>小字平仄</b>（平／仄，平水韵下还细分上、去）。</li>
+      <li>押韵的字<b>标朱色并在字下画红线</b>，旁边注韵部（如「下平一先」）。</li>
+      <li>入声字（普通话里已经读不出来的那批仄声字，如 白、石、独、竹、一、七、八、十）的声调标成<b>紫色「入」</b>——用平水韵时最容易翻车的就是它们。</li>
+      <li>谱对照行：每一句上方给出<b>标准谱</b>（如 <code>仄仄平平仄仄平</code>）和你<b>实际的平仄</b>，哪里不合一眼可见。</li>
+    </ul>
+    <h3>颜色图例</h3>
+    <table>
+      <tr><th>标记</th><th>含义</th><th>需要做什么</th></tr>
+      <tr><td>浅灰底</td><td>合律</td><td>不用管</td></tr>
+      <tr><td>蓝色「平／仄」</td><td>可平可仄位（一三五不论）</td><td>不用管，这里本来就自由</td></tr>
+      <tr><td>红字</td><td>拗／出韵／缺字</td><td>看下方问题清单，改或不改由你</td></tr>
+      <tr><td>绿字</td><td>拗救、变格（如特拗、孤平自救）</td><td>不用管，这是合法的形式</td></tr>
+      <tr><td>朱色+红线</td><td>韵脚</td><td>旁注韵部，看是否同部</td></tr>
+      <tr><td>橙色虚线下划线</td><td>多音字</td><td><b>点击它</b>，在弹窗里为这句选一个读音，选择会随诗稿保存</td></tr>
+      <tr><td>橙色「？」</td><td>无考</td><td>字表没收录这个字，引擎不装懂，由你自己判断</td></tr>
+    </table>
+    <h3>它能查出什么</h3>
+    <p>出韵、失粘、失对、孤平、三平尾、三仄尾、句长不符、词的字数与句读不符——都会列在问题清单里，按严重程度着色，点问题可以定位到句。同时它<b class="key">不会冤枉人</b>：</p>
+    <div class="good">
+      · 首句借邻韵（孤雁出群格）→ 标注说明，不算错；<br>
+      · 特拗（如「平平仄平仄」）、孤平自救、对句救 → 判为合律；<br>
+      · 一三五不论的可平可仄位 → 从不误报；<br>
+      · 古风、诗经体不检平仄，只标声调、韵脚与换韵；诗经体非四言句只作提示。
+    </div>
+    <div class="good">写<b>小序</b>（题记、序言）：日期下方有专门的「小序」栏。序是散文，写在这里<b>不参与格律检视</b>，不会打乱词谱对照；它会随诗稿保存，显示在诗页面题下，AI 评审也会读到它。</div>
+    <div class="good">写<b>小序</b>（题记、序言）：日期下方有专门的「小序」栏。序是散文，写在这里<b>不参与格律检视</b>，不会打乱词谱对照；它会随诗稿保存，显示在诗页面题下，AI 评审也会读到它。</div>
+    <h3>韵书：四套随时切换</h3>
+    <p>编辑器顶部可为本诗选择韵书，切换即全文重算：</p>
+    <table>
+      <tr><th>韵书</th><th>依据</th><th>适合</th></tr>
+      <tr><td><b>平水韵</b>（默认）</td><td>中古音，106 部，保留入声</td><td>近体诗正统，与古人一致</td></tr>
+      <tr><td><b>词林正韵</b></td><td>词韵 19 部（写词时自动切到此书）</td><td>填词</td></tr>
+      <tr><td><b>中华通韵</b></td><td>2019 官方规范，按普通话</td><td>追求今天朗诵的顺口</td></tr>
+      <tr><td><b>中华新韵</b></td><td>2004 十四韵，按普通话</td><td>介于两者之间</td></tr>
+    </table>
+    <div class="tip">铁律只有一条：<b>一首诗里只用一套韵书，不要混用</b>。拿不准就先用默认的平水韵写，写完切到通韵听听哪个顺口。</div>
+    <div class="tip"><b>换字体</b>：编辑栏与诗页面都有字体下拉——楷体、宋体、仿宋、黑体、雅黑五种必装，另有行楷、隶书、新魏、舒体、华隶、幼圆、姚体等古风字体（你电脑里装了的才会出现在列表中）。选择全局生效并自动记住。</div>
+    <h3>写词</h3>
+    <p>体裁选<b class="key">「词」</b>后，顶部会出现词牌栏：点<b class="key">「选词牌」</b>打开搜索列表（常用词牌置顶，共收录 <b>817 调</b>，如浣溪沙、水调歌头、念奴娇……），点「谱」可随时查看该调谱面；韵书也会按惯例自动切到词林正韵（可改回）。选定词牌后，格律面板按词谱<b>逐句对照</b>：句读、平仄、韵位、换韵分段检查，多字缺字都会点名。诗的详情页点<b class="key">「格律」</b>按钮，也能随时打开整篇检视。</p>
+    <div class="good">词的正文<b>怎么排版都可以</b>：一行一句、或像散文一样数句连写都行——诗匣按标点自动断句，空行视为换阕。同一个词牌往往有多种「体」（句读不同），引擎会<b>自动选与你写得最合的那一体</b>，并在面板顶部注明（如「念奴娇·又一体2（苏轼体）」）。如〈念奴娇·赤壁怀古〉的韵脚「物壁雪杰发灭发月」中，「壁」按词林正韵确属出韵（锡部混入月屑部）——这是词史上著名的公案，面板会如实标出，是否在意由你。</div>
+    <div class="tip">格律检测是参考工具，不是裁判。格律对了诗未必好，标红处也可能正是你的有意之拗——最终判断，请连同面板下方的问题清单一起交给你的眼光与 AI 评审。</div>
+  </div>
+
+  <div class="card">
+    <h2><span class="no">陆</span>AI 评价与对谈：请一位古代才女</h2>
+    <div class="good">诗匣的 AI 以一位<b>生于书香门第的古代才女</b>的形象与你相处：她自称「小女子」「妾身」，言辞温婉、好以风月琴书作比，却学识扎实、判断中肯——评诗时直指得失，绝不因客气而含糊。她的人设与两套评分准则都可以在设置页修改。</div>
+    <h3>第一步：接入模型（只需一次）</h3>
+    <div class="step"><span class="n">1</span><span class="t">在目录页右上角的工具栏点<b class="key">「设置」</b>（手册、对谈按钮旁边），找到「AI 模型配置」。</span></div>
+    <div class="step"><span class="n">2</span><span class="t">点「＋ 新增模型配置」后，<b class="key">先点一家服务商的按钮</b>（DeepSeek／智谱 GLM／Kimi／通义千问／OpenAI）——接口地址和模型名会自动填好，页面上还会告诉你去哪里获取 Key、附直达链接。你只需要把 Key 粘贴进去。</span></div>
+    <div class="tip">万一要接列表之外的服务商：接口地址照抄它文档里的 Base URL，粘贴时少了 https:// 或多了结尾斜杠都没关系，诗匣会自动纠正；模型名一栏会有常用模型的下拉可选。测试连接失败时，提示会直接告诉你是 Key 不对、地址不对还是模型名不对。</div>
+    <div class="step"><span class="n">3</span><span class="t">点<b class="key">「测试连接」</b>，出现绿色 ✓ 即成功；最后点「保存设置」。</span></div>
+    <div class="warn">API Key 只保存在你自己的电脑里，诗匣用它直接连你选的厂商，不经手任何第三方。不要把你的 Key 发给别人，也不要把别人给的 Key 传到网上。</div>
+    <h3>第二步：评价一首诗</h3>
+    <p>诗的页面点<b class="key">「AI 评价」</b> → 选一个配置 → 开始。评语会逐字流出（像打字机一样），结束后<b>自动存入这首诗的档案</b>。可以换不同的模型各评一次，多条评价并存，每条可展开、可删除（有确认）。</p>
+    <h3>与伊对谈：和她自由说话</h3>
+    <p>目录页右上角点<b class="key">「对谈」</b>，就进入了她的书斋。可以请她评诗、问格律、问典故、聊心得，也可以只是闲叙。她逐字作答（打字机效果），对谈记录自动保存在 <code>诗匣数据/对话/</code> 里，下次打开还在。点<b class="key">「另起一谈」</b>可清空重来（有确认弹窗）。</p>
+    <ul>
+      <li>Enter 发送，Shift+Enter 换行；</li>
+      <li>配置了多个模型时，可在对谈页顶部切换由哪一位应答；</li>
+      <li>对谈人设（她的性情口吻）在「设置 → 对谈人设」里可改，可恢复默认。</li>
+    </ul>
+    <div class="tip">请她评诗也可以直接把诗贴进对谈里聊；若要正式评分并存档，还是走诗页面的「AI 评价」。</div>
+    <h3>评分标准（两卷各一套，满分 100）</h3>
+    <ul>
+      <li><b>甲编（新诗）</b>：语言 25 ／ 意象 20 ／ 结构章法 20 ／ 情感与思想 20 ／ 原创性 15。</li>
+      <li><b>乙编（古体与词）</b>：格律声韵 25 ／ 意境兴象 25 ／ 炼字炼句 20 ／ 章法结构 15 ／ 气脉格调 15。乙编评审时会自动附上本地格律检测报告供它复核（它被要求独立判断，允许推翻检测）。</li>
+      <li>两套准则共同的脾气：<b>必须引用原句说话、禁止空话套话、分数分档有明确定义、不给敷衍的中间分</b>；用典不单独占分——不用典绝不扣分，误用典故才点名扣。</li>
+    </ul>
+    <p>准则全文在设置页里，可以按自己的口味修改，也可以一键恢复默认。</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="no">柒</span>你的诗稿在哪里，怎么备份</h2>
+    <ul>
+      <li>所有数据都在文件夹 <code>诗匣数据</code> 里：<code>poems</code>（甲编）、<code>gushi</code>（乙编），<b class="key">一首诗一个纯文本文件</b>，用记事本都能打开。</li>
+      <li><b>备份</b> ＝ 把 <code>诗匣数据</code> 文件夹整个拷走（U 盘、网盘都行）。</li>
+      <li><b>清空重来</b> ＝ 把 <code>poems</code>、<code>gushi</code> 里的文件删掉。</li>
+      <li><b>换电脑</b> ＝ 把整个诗匣文件夹（或完整包解压后的文件夹）拷过去，双击启动，诗稿跟着走。</li>
+      <li>「设置」页最下方有<b class="key">「从 poems.json 导入编订版诗稿」</b>按钮：如果你的电脑上有诗匣作者的同名诗稿文件，可以一键导入全部诗目（已存在的同名诗会自动跳过）。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2><span class="no">捌</span>常见问题</h2>
+    <table>
+      <tr><th style="width:38%;">问题</th><th>答案</th></tr>
+      <tr><td>浏览器没有自动打开？</td><td>手动打开浏览器，地址栏输入 <code>localhost:8137</code>。</td></tr>
+      <tr><td>忘了点保存就关了页面？</td><td>没丢。草稿自动暂存过，重新进编辑器会自动恢复。</td></tr>
+      <tr><td>改了几句又后悔了？</td><td>如果保存过且勾了「存入历史」：到版本区「设为当前」；如果没保存过：编辑页点「放弃改动，还原为已保存版本」。</td></tr>
+      <tr><td>格律面板里某个字标了橙色「？」？</td><td>那是字表没收录的生僻字，引擎不猜测，平仄由你自己定。多音字则是虚线标记，点击选读音。</td></tr>
+      <tr><td>格律面板全绿但 AI 评审说格律有问题？</td><td>两者是独立判断，以 AI 的复核为准也以你的耳朵为准——检测只是参考。</td></tr>
+      <tr><td>AI 评价报错了？</td><td>多半是 Key 填错、网络不通或模型名写错。到设置页点「测试连接」，按提示排查；错误信息会原样显示，可直接对照厂商文档。</td></tr>
+      <tr><td>两个人可以共用一个诗匣吗？</td><td>每人用自己电脑上的一份最合适（诗稿与 Key 都是私有的）。若真要多人连同一台电脑，请勿把端口开放到局域网——目前它只监听本机。</td></tr>
+      <tr><td>想要新词牌？</td><td>词谱是纯数据文件（<code>诗匣数据/词谱/</code>），按格式加进去即可，不需要改程序；首批已收 817 调，常用调基本都有。</td></tr>
+      <tr><td>诗匣会把我写的诗上传到网上吗？</td><td>不会。诗稿只在你的硬盘上；唯一对外的网络请求是你主动点 AI 评价时，把那一首诗发给你自己配置的模型服务商。</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2><span class="no">玖</span>一页速查</h2>
+    <table>
+      <tr><th>想做什么</th><th>怎么做</th></tr>
+      <tr><td>写新诗</td><td>右上角「＋ 写新诗 / 写新篇」</td></tr>
+      <tr><td>找一首诗</td><td>目录点标题，或用顶部搜索框（搜诗题或任意诗句）</td></tr>
+      <tr><td>改诗留底</td><td>编辑 → 保存 → 默认勾选「存入历史」＋ 写备注</td></tr>
+      <tr><td>对比两版</td><td>诗页面 → 保留的旧版本 → 「与当前版对比」</td></tr>
+      <tr><td>反悔一次改动</td><td>版本区「设为当前」，或编辑页「放弃改动」</td></tr>
+      <tr><td>查格律</td><td>乙编辑器右侧面板（实时）；详情页「格律」按钮（整篇）</td></tr>
+      <tr><td>切韵书</td><td>编辑器顶部韵书下拉，随时切换</td></tr>
+      <tr><td>选读音</td><td>点击带虚线的多音字</td></tr>
+      <tr><td>请 AI 评审</td><td>诗页面「AI 评价」（先在设置页配好模型）</td></tr>
+      <tr><td>与才女对话</td><td>目录页右上角「对谈」</td></tr>
+      <tr><td>写小序</td><td>编辑器日期下方的「小序」栏（不计入格律）</td></tr>
+      <tr><td>换字体</td><td>编辑栏 / 诗页面的字体下拉</td></tr>
+      <tr><td>重新开始一段对话</td><td>对谈页「另起一谈」</td></tr>
+      <tr><td>改评审口味</td><td>设置页两套准则文本框（可恢复默认）</td></tr>
+      <tr><td>备份</td><td>拷走 <code>诗匣数据</code> 文件夹</td></tr>
+      <tr><td>撤销打字</td><td><span class="kbd">Ctrl+Z</span> ／ <span class="kbd">Ctrl+Y</span></td></tr>
+    </table>
+  </div>
+
+  <p class="footer">—— 诗匣 · 愿你写诗愉快 ——</p>
+</div>
+</body>
+</html>

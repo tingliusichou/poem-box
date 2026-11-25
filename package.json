@@ -1,0 +1,7 @@
+{
+  "name": "shixia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "诗匣 —— 私人诗歌写作台（零依赖 Node 服务）",
+  "main": "server.js"
+}

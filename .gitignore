@@ -1,0 +1,20 @@
+# 便携运行时(node.exe 约 93MB,不进 git,完整包含于 Release 附件)
+runtime/
+
+# 依赖与产物
+node_modules/
+*.zip
+*.log
+test-results/
+
+# 运行数据目录(诗稿、对话、config.json 含 API Key,均不入库)
+诗匣数据/
+
+# 数据构建的临时产物(构建脚本保留,out/raw/解包副本不入库)
+.build/out/
+.build/raw/
+.build/privacy-scan/
+.build/zip-final/
+.build/zip-final2/
+.build/docx.zip
+.build/gushi-docx.zip

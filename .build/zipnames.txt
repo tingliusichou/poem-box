@@ -1,0 +1,8 @@
+﻿诗匣完整包\诗匣数据\
+诗匣完整包\使用说明.txt
+诗匣完整包\启动诗匣.bat
+诗匣完整包\runtime\node.exe
+诗匣完整包\诗匣\package.json
+诗匣完整包\诗匣\README.md
+诗匣完整包\诗匣\server.js
+诗匣完整包\诗匣\test-api.mjs
